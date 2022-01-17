@@ -8,6 +8,7 @@ public class Runner {
 		SubRunner exercise = new SubRunner();
 		exercise.task();
 		exercise.openClosed();
+		exercise.dependency();
 	}
 
 }
