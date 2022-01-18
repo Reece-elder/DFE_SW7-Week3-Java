@@ -8,6 +8,10 @@ import qa.com.designPattern.builder.AccountBuilder;
 import qa.com.designPattern.builder.BankAccount;
 import qa.com.designPattern.builder.Pizza;
 import qa.com.designPattern.builder.PizzaBuilder;
+import qa.com.designPattern.strategy.Blue;
+import qa.com.designPattern.strategy.Green;
+import qa.com.designPattern.strategy.Red;
+import qa.com.designPattern.strategy.StrategySwapper;
 
 public class DesRunner {
 	
@@ -42,6 +46,26 @@ public class DesRunner {
 		} else {
 			System.out.println("Square peg doesnt fit :( ");
 		}
+		
+	}
+	
+	public void strategy() {
+		
+		// Having to create a new object for each can be time consuming and memory consuming
+//		Red red = new Red();
+//		Blue blue = new Blue();
+//		Green green = new Green();
+		
+//		System.out.println(red.printShape("Hexagon"));
+		
+		// Initialise our swapper
+		StrategySwapper swapper = new StrategySwapper();
+		swapper.setColour(new Blue());
+		System.out.println(swapper.print("star"));
+		
+		swapper.setColour(new Red());
+		System.out.println(swapper.print("crescent"));
+		
 		
 	}
 

@@ -11,8 +11,9 @@ public class Runner {
 //		exercise.openClosed();
 //		exercise.dependency();
 		DesRunner exercise = new DesRunner();
-		exercise.builder();
-		exercise.adapter();
+//		exercise.builder();
+//		exercise.adapter();
+		exercise.strategy();
 	}
 
 }
