@@ -1,6 +1,7 @@
 package com.qa.pizzeria;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -59,6 +60,49 @@ public class PizzaManager {
 		}
 		return null;
 		
+	}
+	
+	public void viewAllPizzas() {
+		try {
+			conn = jdbc.connect();
+			stmt = conn.createStatement();
+			String query = "SELECT * FROM pizzas";
+			// result - All objects from our database
+			ResultSet result = stmt.executeQuery(query);
+			
+			// While result.next() = true {do this thing}
+			// result ISNT an array 
+			// NOT SAYING Loop through the array and print out each document
+			// result = a spreadsheet, change the row we're focusing on 
+			while(result.next()) {
+				System.out.println(jdbc.returnResults(result));
+			};
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	// Query - Reading data 
+	// Update - Modifying data (Read, delete, create)
+	
+	// Prepared Statements - nicer ways of making longer queries
+	public void deletePizza(long id) {
+		try {
+			conn = jdbc.connect();
+			
+			// Prepared statements use SQL ? Syntax
+			// ? relates to a variable we can pass in
+			PreparedStatement preStmt = conn.prepareStatement("DELETE FROM pizzas where id = ?");
+			
+			// Find the first ? set its value to be a Long with a value of <id>
+//			preStmt.setString(1, "id");
+			preStmt.setLong(1, id);
+			
+			// Execute the statement
+			preStmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	

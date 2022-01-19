@@ -14,6 +14,9 @@ public class Runner {
 		// But requires it being passed in to run
 		manager.addPizza(pepperoni);
 		System.out.println(manager.viewPizza(11));
+		manager.deletePizza(12);
+		manager.viewAllPizzas();
+
 	}
 
 }
