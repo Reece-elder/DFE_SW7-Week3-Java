@@ -43,17 +43,18 @@ public class ExceptionRunner {
 		
 	}
 	
-	public static void ifCustomException() {
-		try {
-			String colour = "red";
-			if (colour == "red") {
-				throw new CustomExceptionRed();
-			} else if (colour == "blue") {
-				throw new CustomExceptionBlue();
-			}
-		}
-
-	}
+//	public static void ifCustomException() {
+//		try {
+//			String colour = "red";
+//			if (colour == "red") {
+//				throw new CustomExceptionRed();
+//			} else if (colour == "blue") {
+//				throw new CustomExceptionBlue();
+//			}
+//		}
+//	}
+	
+	// Exercise - Community > Exceptions > Exercise 
 	
 	public static void main(String[] args) {
 //		makeError();
