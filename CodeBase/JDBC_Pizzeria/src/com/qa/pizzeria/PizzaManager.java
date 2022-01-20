@@ -105,6 +105,24 @@ public class PizzaManager {
 		}
 	}
 	
+	public Pizza updatePizza(long id, Pizza pizza) {
+		try {
+			conn = jdbc.connect();
+			String update = "UPDATE pizzas SET type = ?, slices = ?, stuffedCrust = ? WHERE id = ?";
+			PreparedStatement preStmt = conn.prepareStatement(update);
+			preStmt.setString(1, pizza.getType());
+			preStmt.setInt(2, pizza.getSlices());
+			preStmt.setBoolean(3, pizza.isStuffedCrust());
+			preStmt.setLong(4, id);
+			
+			preStmt.executeUpdate();
+			return viewPizza(id);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
 	
 	
 	
