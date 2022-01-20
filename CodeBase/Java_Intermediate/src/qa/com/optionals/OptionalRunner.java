@@ -52,6 +52,12 @@ public class OptionalRunner {
 //		System.out.println(filteredName);
 		System.out.println(otherName);
 		
+		// Exercise - Create a list of towns
+		// Filter through the list returning an Optional with the name of a town if it exists
+		// If it does not Return an empty Optional
+		// Print out the name of the town if it exists
+		// Print out "Town does not exist" it it doesn't
+		
 		
 		
 	}
