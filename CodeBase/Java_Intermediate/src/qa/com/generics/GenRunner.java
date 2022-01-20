@@ -31,8 +31,8 @@ public class GenRunner {
 		lionCage2.setAnimal(new Lion());
 		
 		// Perfectly fine code, will work but doesnt make sense 
-		Cage<Animal> rockCage = new Cage<>();
-		rockCage.getAnimal();
+//		Cage<Animal> rockCage = new Cage<>();
+//		rockCage.getAnimal();
 		
 		
 		// Exercise - Create a parent class for pokemon (or anything you want tbf)
