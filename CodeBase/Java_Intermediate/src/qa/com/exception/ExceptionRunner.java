@@ -17,9 +17,16 @@ public class ExceptionRunner {
 	
 	// Catch is taking the error, handling it and letting the app keep running
 	public static void makeException() {
+		// ALL of your code into a try {} 
+		// Input Validation if(a == 0) should be first
+		// Checking for errors BEFORE doing any logic
 		try {
 			int[] numberArray = {1,2,3};
-			System.out.println(numberArray[6]);
+			// Throws an arrayOutOfBoundsException = Exception
+			System.out.println(numberArray[6]); 
+			
+			// Catch should be at the end after the try{}
+			// Should be expecting an exception, and what to do with it
 		} catch (Exception exception) { // Exception is a built in Exception within Java
 			exception.printStackTrace();
 			System.out.println("Big Error!");
