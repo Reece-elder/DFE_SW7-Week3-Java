@@ -88,11 +88,12 @@ public class PizzaManager {
 	// Prepared Statements - nicer ways of making longer queries
 	public void deletePizza(long id) {
 		try {
+			System.out.println("Delete process started");
 			conn = jdbc.connect();
 			
 			// Prepared statements use SQL ? Syntax
 			// ? relates to a variable we can pass in
-			PreparedStatement preStmt = conn.prepareStatement("DELETE FROM pizzas where id = ?");
+			PreparedStatement preStmt = conn.prepareStatement("DELETE FROM pizza where id = ?");
 			
 			// Find the first ? set its value to be a Long with a value of <id>
 //			preStmt.setString(1, "id");
@@ -101,6 +102,7 @@ public class PizzaManager {
 			// Execute the statement
 			preStmt.executeUpdate();
 		} catch (SQLException e) {
+			System.out.println("it crashes here!");
 			e.printStackTrace();
 		}
 	}
